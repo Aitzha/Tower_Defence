@@ -14,8 +14,8 @@ public class Manager : MonoBehaviour
     public float spawnDelay = 1f;
     public float levelsDelay = 5f;
 
-    private float delayPassed = 1f;
-    private float levelPassed = 5;
+    private float spawnDelayPassed = 1f;
+    private float levelDelayPassed = 5;
 
 
     private int enemiesOnScreen = 0;
@@ -43,24 +43,24 @@ public class Manager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(levelPassed >= levelsDelay)
+        if(levelDelayPassed >= levelsDelay)
         {
-            if(delayPassed >= spawnDelay && curLevelEnemiesNumber > 0)
+            if(spawnDelayPassed >= spawnDelay && curLevelEnemiesNumber > 0)
             {
-                delayPassed = 0;
+                spawnDelayPassed = 0;
                 if(enemiesOnScreen <= maxEnemiesOnScreen)
                 {
                     Spawn(1);
                 }
-            } else if(delayPassed < spawnDelay)
+            } else if(spawnDelayPassed < spawnDelay)
             {
-                delayPassed += Time.deltaTime;
+                spawnDelayPassed += Time.deltaTime;
             }
 
         } else if(enemiesOnScreen == 0)
         {
-            levelPassed += Time.deltaTime;
-            if(levelPassed >= levelsDelay)
+            levelDelayPassed += Time.deltaTime;
+            if(levelDelayPassed >= levelsDelay)
             {
                 curLevelEnemiesNumber = 5;
             }
@@ -75,7 +75,7 @@ public class Manager : MonoBehaviour
         curLevelEnemiesNumber -= 1;
         if(curLevelEnemiesNumber == 0)
         {
-            levelPassed = 0;
+            levelDelayPassed = 0;
         }
     }
 
