@@ -9,16 +9,13 @@ public class Manager : MonoBehaviour
     public GameObject spawnPoint;
     public GameObject[] enemies;
     public int maxEnemiesOnScreen;
-    public int curLevelEnemiesNumber = 5;
-
     public float spawnDelay = 1f;
     public float levelsDelay = 5f;
 
     private float spawnDelayPassed = 1f;
     private float levelDelayPassed = 5;
-
-
     private int enemiesOnScreen = 0;
+    private int curLevelEnemiesNumber = 5;
 
     private void Awake()
     {

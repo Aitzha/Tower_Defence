@@ -5,7 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     //target index enemy is moving to
-    public int target = 0;
+    private int target = 0;
 
     //variable to save finish gameobject
     public Transform exit;
