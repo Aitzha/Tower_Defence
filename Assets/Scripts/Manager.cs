@@ -9,10 +9,16 @@ public class Manager : MonoBehaviour
     public GameObject spawnPoint;
     public GameObject[] enemies;
     public int maxEnemiesOnScreen;
-    public int totalEnemies;
-    public int enemiesPerSpawn;
+    public int curLevelEnemiesNumber = 5;
 
-    int enemiesOnScreen = 0;
+    public float spawnDelay = 1f;
+    public float levelsDelay = 5f;
+
+    private float delayPassed = 1f;
+    private float levelPassed = 5;
+
+
+    private int enemiesOnScreen = 0;
 
     private void Awake()
     {
@@ -31,28 +37,53 @@ public class Manager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Spawn();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(levelPassed >= levelsDelay)
+        {
+            if(delayPassed >= spawnDelay && curLevelEnemiesNumber > 0)
+            {
+                delayPassed = 0;
+                if(enemiesOnScreen <= maxEnemiesOnScreen)
+                {
+                    Spawn(1);
+                }
+            } else if(delayPassed < spawnDelay)
+            {
+                delayPassed += Time.deltaTime;
+            }
+
+        } else if(enemiesOnScreen == 0)
+        {
+            levelPassed += Time.deltaTime;
+            if(levelPassed >= levelsDelay)
+            {
+                curLevelEnemiesNumber = 5;
+            }
+        }
     }
 
-    void Spawn()
+    void Spawn(int enemyType) 
     {
-        if(enemiesPerSpawn > 0 && enemiesOnScreen < totalEnemies)
+        GameObject newEnemy = Instantiate(enemies[enemyType]) as GameObject;
+        newEnemy.transform.position = spawnPoint.transform.position;
+        enemiesOnScreen += 1;
+        curLevelEnemiesNumber -= 1;
+        if(curLevelEnemiesNumber == 0)
         {
-            for(int i = 0; i < enemiesPerSpawn; i++)
-            {
-                if(enemiesOnScreen < maxEnemiesOnScreen)
-                {
-                    GameObject newEnemy = Instantiate(enemies[0]) as GameObject;
-                    newEnemy.transform.position = spawnPoint.transform.position;
-                    enemiesOnScreen += 1;
-                }
-            }
+            levelPassed = 0;
+        }
+    }
+
+    public void removeEnemyFromScreen()
+    {
+        if(enemiesOnScreen > 0)
+        {
+            enemiesOnScreen -= 1;
         }
     }
 }

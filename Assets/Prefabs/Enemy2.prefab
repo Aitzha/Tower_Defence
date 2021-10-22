@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8037374173517417932}
   - component: {fileID: 8459036721291032614}
   - component: {fileID: 4527989958953686299}
+  - component: {fileID: 1101000483121304000}
   - component: {fileID: 5400406740079279987}
   - component: {fileID: 3298989798740417381}
   m_Layer: 6
@@ -73,7 +74,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: c0d457fbd8008964e8aeaec7795c6bd3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -104,6 +105,26 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1101000483121304000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3655685802944445819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 865211dbd02d37b48a460e8fa286fbdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: 0
+  exit: {fileID: 8851815374219912172, guid: 945297b50ac08cd40b68ba5702e69056, type: 3}
+  wayPoints:
+  - {fileID: 2659762449012046265, guid: 9bb9be989077c2646b70bf285de1c725, type: 3}
+  - {fileID: 617437239753530847, guid: 09e46ba84b33917429567bde60e4d284, type: 3}
+  - {fileID: 454023917916696940, guid: 9b9eecd290871994583056febbdb113a, type: 3}
+  - {fileID: 2609372580739547458, guid: 3a96b9c3801edc046b425b83c051b545, type: 3}
+  speed: 1
 --- !u!50 &5400406740079279987
 Rigidbody2D:
   serializedVersion: 4

@@ -48,6 +48,7 @@ MonoBehaviour:
   - {fileID: 2525122037314339214, guid: 50bee974298e0ec49923d981ae3206cb, type: 3}
   - {fileID: 3655685802944445819, guid: a45c61818436bc74b9c5558a8cae6834, type: 3}
   - {fileID: 196787329569413618, guid: 326a58f55e893ac48a7ab1754a20da4c, type: 3}
-  maxEnemiesOnScreen: 10
-  totalEnemies: 10
-  enemiesPerSpawn: 1
+  maxEnemiesOnScreen: 5
+  curLevelEnemiesNumber: 5
+  spawnDelay: 1
+  levelsDelay: 5
