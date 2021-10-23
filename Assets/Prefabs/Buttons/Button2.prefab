@@ -146,3 +146,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   towerObject: {fileID: 7498115562387218084, guid: c43ec2e5b37b5864b804900646b73fe3, type: 3}
+  towerSprite: {fileID: 21300000, guid: 3265c6d7b7d70a84caa634f8b94f4b98, type: 3}
