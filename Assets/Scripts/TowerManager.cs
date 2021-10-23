@@ -55,7 +55,7 @@ public class TowerManager : MonoBehaviour
 
     public void SelectedTower(TowerButton towerSeleted)
     {
-        if(towerButtonPressed == null)
+        if(towerButtonPressed == null || towerButtonPressed.TowerObject != towerSeleted.TowerObject)
         {
             towerButtonPressed = towerSeleted;
             EnableDrag(towerButtonPressed.TowerSprite);
