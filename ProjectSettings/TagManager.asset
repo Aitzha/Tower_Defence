@@ -6,6 +6,10 @@ TagManager:
   tags:
   - MovingPoint
   - Enemy
+  - TowerSpot
+  - Road
+  - Ground
+  - Decoration
   layers:
   - Default
   - TransparentFX
